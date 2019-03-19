@@ -1,0 +1,22 @@
+{
+  "name": "music_playlist_fe",
+  "version": "1.0.0",
+  "description": "Music Playlist Front End",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSmith23/music_playlist_fe.git"
+  },
+  "author": "Justin Clark & Jimmy Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSmith23/music_playlist_fe/issues"
+  },
+  "homepage": "https://github.com/JSmith23/music_playlist_fe#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
