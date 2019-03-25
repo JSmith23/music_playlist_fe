@@ -14,7 +14,9 @@ function component() {
       <input id='artist' type="text" placeholder="Enter Artist">
       <input id='artist-search' type="submit" value="Submit">
     </form>
-    <p id='artist-response'></p>`;
+    <p id='artist-response'></p>
+    <div class='button'><button id='get-favorites'>Get Favorites</button></div>
+    <p id='favorites-response'></p>`;
 
   return element;
 }
@@ -52,6 +54,36 @@ $('#artist-search').click((e) => {
   })
 })
 
+$('#get-favorites').click((e) => {
+  e.preventDefault();
+
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  const url = `http://playlist-1810.herokuapp.com/api/v1/favorites`; 
+  $('#favorites-response').innerHTML = '';
+
+  let textToAppend = `<table style="width:100%"><tr><th>Artist</th><th>Album</th><th>Track</th><th>Rating</th><th>Favorite</th><th>Edit</th></tr>`
+  
+  $.ajax({
+    method: 'GET', 
+    url: proxyurl + url, 
+    success: ((response) => {
+      response.forEach((track) => {
+        textToAppend += `<tr>
+                  <td>${ track.artist_name }</td>
+                  <td>${ track.genre }</td>
+                  <td>${ track.name }</td>
+                  <td>${ track.track_rating }</td>
+                  <td><span class='remove-favorites' id='${track.id}'>Remove From Favorites</span></td>
+                  <td><span class='edit-favorites' id='${track.id}-e'>Edit</span></td>`
+      })
+      textToAppend += '</table>'
+      $('#favorites-response').append(textToAppend);
+      addDeleteListener();
+      addEditListener();
+    }),
+  })
+})
+
 function addFavoriteListener() {
   $('.add-to-favorites').click((e) => {
     let artist = e.target.parentElement.parentElement.children[0].innerText
@@ -66,6 +98,35 @@ function addFavoriteListener() {
       method: 'POST',
       url: url,
       data: `{"favorites": {"name":"${track}", "artist_name":"${artist}", "genre":"${album}", "rating":"${rating}"}}`
+    })
+  })
+}
+
+function addDeleteListener() {
+  $('.remove-favorites').click((e) => {
+    debugger;
+    let artistId = e.target.parentElement.parentElement.children[4].firstChild.id;
+
+    const url = `http://playlist-1810.herokuapp.com/api/v1/favorites/${artistId}`; 
+
+    $.ajax({
+      method: 'DELETE',
+      url: url,
+    })
+  })
+}
+
+function addEditListener() {
+  $('.edit-favorites').click((e) => {
+    let artist_id = e.target.parentElement.parentElement.children[5].firstChild.id;
+    artist_id = artist_id.slice(0, artist_id.length - 2)
+
+    const url = `http://playlist-1810.herokuapp.com/api/v1/favorites/${artist_id}`; 
+
+    $.ajax({
+      method: 'PUT',
+      url: url, 
+      data: `{"favorites": {"id": "${artist_id}", name":"${track}", "artist_name":"${artist}", "genre":"${album}", "rating":"${rating}"}}`
     })
   })
 }
