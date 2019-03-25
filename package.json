@@ -1,0 +1,40 @@
+{
+  "name": "music_playlist_fe",
+  "version": "1.0.0",
+  "description": "Music Playlist Front End",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "server": "node server.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSmith23/music_playlist_fe.git"
+  },
+  "author": "Justin Clark & Jimmy Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSmith23/music_playlist_fe/issues"
+  },
+  "homepage": "https://github.com/JSmith23/music_playlist_fe#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "express": "^4.16.4",
+    "file-loader": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "^3.6.1",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
