@@ -10,7 +10,7 @@ function component() {
   let element = document.createElement('div');
 
   element.innerHTML = `
-    <form>
+    <form id='search-bar'>
       <input id='artist' type="text" placeholder="Enter Artist">
       <input id='artist-search' type="submit" value="Submit">
     </form>
@@ -43,11 +43,29 @@ $('#artist-search').click((e) => {
                   <td>${ track.track.album_name }</td>
                   <td>${ track.track.track_name }</td>
                   <td>${ track.track.track_rating }</td>
-                  <td><span id='${track.track.track_name}'>Add To Favorites</span></td>`
+                  <td><span class='add-to-favorites' id='${track.track.track_name}'>Add To Favorites</span></td>`
       })
       textToAppend += '</table>'
       $('#artist-response').append(textToAppend);
+      addFavoriteListener();
     }),
   })
 })
 
+function addFavoriteListener() {
+  $('.add-to-favorites').click((e) => {
+    let artist = e.target.parentElement.parentElement.children[0].innerText
+    let album = e.target.parentElement.parentElement.children[1].innerText
+    let track = e.target.parentElement.parentElement.children[2].innerText
+    let rating = e.target.parentElement.parentElement.children[3].innerText
+
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = `http://playlist-1810.herokuapp.com/api/v1/favorites`; 
+
+    $.ajax({
+      method: 'POST',
+      url: url,
+      data: `{"favorites": {"name":"${track}", "artist_name":"${artist}", "genre":"${album}", "rating":"${rating}"}}`
+    })
+  })
+}
