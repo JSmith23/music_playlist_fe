@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/JSmith23/music_playlist_fe#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {

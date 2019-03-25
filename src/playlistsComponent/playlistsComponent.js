@@ -10,6 +10,7 @@ export function playlistsComponent() {
       theHTML += `<p>${album.title}</p>`;
     })
     element.innerHTML = theHTML;
+    // element.innerHTML = MUSIC_API;
   
   })
   return element;

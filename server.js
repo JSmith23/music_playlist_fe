@@ -1,8 +1,10 @@
 const express = require('express');
 const webpack = require('webpack');
+var cors = require('cors')
 const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
+app.use(cors());
 const config = require('./webpack.config.js');
 const compiler = webpack(config);
 

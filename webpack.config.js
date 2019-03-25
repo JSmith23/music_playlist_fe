@@ -4,7 +4,8 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    headers: { "Access-Control-Allow-Origin": "*" }
   },
   devtool: 'inline-source-map',
   output: {
