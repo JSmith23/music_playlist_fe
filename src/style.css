@@ -28,13 +28,14 @@ body {
 #update-input {
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 #update-input input {
   height: 30px;
-  width: 250px;
+  width: 200px;
   font-size: 16px;
   margin: 5px;
 }
@@ -68,6 +69,12 @@ button {
 
 h1 {
   text-align: center;
+  font-size: 130%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 130%;
 }
 
 h3 {

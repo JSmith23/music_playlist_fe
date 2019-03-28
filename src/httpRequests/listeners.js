@@ -2,21 +2,26 @@ function component() {
   let element = document.createElement('div');
 
   element.innerHTML = `
+    <h1>Play Play Playlist</h1>
+    <h2>Search for songs</h2>
     <form id='search-bar'>
       <input id='artist' type="text" placeholder="Enter Artist">
       <input id='artist-search' type="submit" value="Submit">
     </form>
     <p id='alert-search'></p>
     <p id='artist-response'></p>
+    <h2>See Current Favorites</h2>
     <div class='button'><button id='get-favorites'>Get Favorites</button></div>
     <p id='alert-favorite'></p>
     <p id='favorites-response'></p>
+    <h2>Update Favorites</h2>
     <form id='update-input'>
       <input id='update-artist' type='text' placeholder='Change Artist Name'>
       <input id='update-album' type='text' placeholder='Change Album Name'>
       <input id='update-track' type='text' placeholder='Change Track Name'>
       <input id='update-rating' type='text' placeholder='Change Rating'>
     </form>
+    <h2>See Current Playlists</h2>
     <div class='button'><button id='get-playlists'>Get Playlists</button></div>
     <p id='playlist-response'></p>
     <div id="favoriteToAdd" class="modal">
@@ -25,6 +30,7 @@ function component() {
         <p id='modal-text'></p>
       </div>
     </div>
+    <h2>Add New Playlist</h2>
     <form id='add-playlist-form'>
       <input id='add-playlist' type='text' placeholder='Create New Playlist'>
       <input id='add-playlist-submit' type='submit' value='Add Playlist'>
