@@ -5,7 +5,6 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     contentBase: './dist',
-    headers: { "Access-Control-Allow-Origin": "*" }
   },
   devtool: 'inline-source-map',
   output: {
@@ -16,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
