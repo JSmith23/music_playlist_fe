@@ -5,11 +5,6 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     contentBase: './dist',
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    }
   },
   devtool: 'inline-source-map',
   output: {
@@ -20,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',

@@ -1,8 +1,130 @@
 body {
-  background-color: blue;
-  max-width: 1200px;
+  background-image: url('https://cdn-images-1.medium.com/max/2600/1*_gLAcuc-KxbZMBpdyGlF9Q.jpeg');
+  background-attachment: fixed;
+  background-color: rgb(71, 71, 71);
+  max-width: 1300px;
+  border: 1px solid rgb(65, 80, 114);
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 10px 30px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: rgb(221, 232, 255);
+}
+
+#search-bar {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search-bar input {
+  height: 30px;
+  width: 250px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+#update-input {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#update-input input {
+  height: 30px;
+  width: 250px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+#add-playlist-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-playlist-form input {
+  height: 30px;
+  width: 250px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button {
+  height: 30px;
+  width: 250px;
+  font-size: 16px;
+  margin: 5px;
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-  color: red;
+  text-align: center;
+}
+
+h3 {
+  font-size: 130%;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid rgb(58, 58, 58);
+  padding: 0;
+}
+
+th, td {
+  margin: 3px;
+  padding: 3px 5px;
+}
+
+.single-playlist {
+  border: 1px solid rgb(58, 58, 58);
+  margin: 10px;
+}
+
+/* modal stuff */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgb(61, 61, 61);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
